@@ -36,7 +36,7 @@ pipeline{
                 nexusArtifactUploader artifacts: 
                 [[artifactId: '${ArtifactId}', 
                 classifier: '',
-                file: 'target/ecommapp-${Version}', 
+                file: 'target/ecommapp-'${Version}'', 
                 type: 'war']],
                 credentialsId: 'e204d783-a7b1-4a25-b991-8a9f5fb15dac', 
                 groupId: '${GroupID}', 
