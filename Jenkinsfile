@@ -5,6 +5,13 @@ pipeline{
         maven 'maven'
     }
 
+    environment{
+        ArtifactId = readMavenPom().getArtifactId()
+        Version = readMavenPom().getVersion()
+        Name = readMavenPom().getName()
+        GroupID = readMavenPom.getGroupID()
+    }
+
     stages {
         // Specify various stage with in stages
 
@@ -26,11 +33,34 @@ pipeline{
         // Stage3 : Push the artifact to nexus server
         stage ('Push to nexus'){
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'ecommapp', classifier: '', file: 'target/ecommapp-0.0.3-SNAPSHOT.war', type: 'war']], credentialsId: 'e204d783-a7b1-4a25-b991-8a9f5fb15dac', groupId: 'com.nagarajLabs', nexusUrl: '172.20.10.128:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'NagarajDevOpsLab-SNAPSHOT', version: '0.0.3-SNAPSHOT'
+                nexusArtifactUploader artifacts: 
+                [[artifactId: 'ecommapp', 
+                classifier: '',
+                file: 'target/ecommapp-0.0.3-SNAPSHOT.war', 
+                type: 'war']],
+                credentialsId: 'e204d783-a7b1-4a25-b991-8a9f5fb15dac', 
+                groupId: 'com.nagarajLabs', 
+                nexusUrl: '172.20.10.128:8081', 
+                nexusVersion: 'nexus3', 
+                protocol: 'http', 
+                repository: 'NagarajDevOpsLab-SNAPSHOT', 
+                version: '0.0.3-SNAPSHOT'
             }
         }
 
-        // Stage4 : Publish the source code to Sonarqube
+        // Stage 4: Print the values
+        stage ('Print the environment values'){
+            steps {
+                echo "Artifact ID is '${ArtifactId}'"
+                echo "Version is '${Version}'"
+                echo "Name is '${Name}'"
+                echo "Group ID is '${GroupID}'"
+               }
+
+            }
+        
+
+        // Stage5 : Publish the source code to Sonarqube
         stage ('Deploy'){
             steps {
                 echo ' Deploying......'
