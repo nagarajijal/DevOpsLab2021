@@ -9,7 +9,7 @@ pipeline{
         ArtifactId = readMavenPom().getArtifactId()
         Version = readMavenPom().getVersion()
         Name = readMavenPom().getName()
-        GroupID = readMavenPom().getGroupId()
+        GroupId = readMavenPom().getGroupId()
     }
 
     stages {
@@ -39,7 +39,7 @@ pipeline{
                 file: 'target/ecommapp-0.0.4-SNAPSHOT', 
                 type: 'war']],
                 credentialsId: 'e204d783-a7b1-4a25-b991-8a9f5fb15dac', 
-                groupId: "${GroupID}", 
+                groupId: "${GroupId}", 
                 nexusUrl: '172.20.10.128:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
@@ -54,7 +54,7 @@ pipeline{
                 echo "Artifact ID is '${ArtifactId}'"
                 echo "Version is '${Version}'"
                 echo "Name is '${Name}'"
-                echo "Group ID is '${GroupID}'"
+                echo "Group ID is '${GroupId}'"
                }
 
             }
