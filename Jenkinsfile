@@ -34,17 +34,17 @@ pipeline{
         stage ('Push to nexus'){
             steps {
                 nexusArtifactUploader artifacts: 
-                [[artifactId: ${ArtifactId}, 
+                [[artifactId: "${ArtifactId}", 
                 classifier: '',
                 file: 'target/ecommapp-0.0.4-SNAPSHOT', 
                 type: 'war']],
                 credentialsId: 'e204d783-a7b1-4a25-b991-8a9f5fb15dac', 
-                groupId: ${GroupID}, 
+                groupId: "${GroupID}", 
                 nexusUrl: '172.20.10.128:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'NagarajDevOpsLab-SNAPSHOT', 
-                version: ${Version}
+                version: "${Version}"
             }
         }
 
