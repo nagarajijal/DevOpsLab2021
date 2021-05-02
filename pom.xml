@@ -4,7 +4,7 @@
   <groupId>com.nagarajLabs</groupId>
   <artifactId>ecommapp</artifactId>
   <packaging>war</packaging>
-  <version>0.0.6</version>
+  <version>0.0.7</version>
   <name>nagaDevOpsLab</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -19,3 +19,4 @@
     <finalName>${project.artifactId}-${project.version}</finalName>
   </build>
 </project>
+
