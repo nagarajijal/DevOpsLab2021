@@ -95,7 +95,7 @@ stage('Deploy to Ansible'){
                     transfers: [
                         sshTransfer(
                             cleanRemote: false,
-                            execCommand: 'ansible-playbook /opt/playbook/download-deploy.yaml -i /opt/playbook/hosts'
+                            execCommand: 'ansible-playbook /opt/playbooks/download-deploy.yaml -i /opt/playbooks/hosts'
                             execTimeout: 120000
                     )
                     ],
