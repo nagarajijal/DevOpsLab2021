@@ -97,12 +97,12 @@ stage('Deploy to Ansible'){
                             cleanRemote: false,
                             execCommand: 'ansible-playbook /opt/playbooks/download-deploy.yaml -i /opt/playbooks/hosts',
                             execTimeout: 120000
-                    )
+                        )
                     ],
                     usePromotionTimestamp: false,
                     useWorkspaceInPromotion: false, 
                     verbose: false)
-                ])
+                    ])
                }
 
             }
