@@ -65,24 +65,25 @@ pipeline{
         }
         
         // Stage5 : Deploying
-        stage ('Deploy'){
+        stage ('Deploy to Tomcat'){
             steps {
-                echo ' Deploying......'
+                echo "Deploying ...."
                 sshPublisher(publishers: 
                 [sshPublisherDesc(
-                    configName: 'Ansible-controller', 
+                    configName: 'Ansible_Controller', 
                     transfers: [
                         sshTransfer(
-                            cleanRemote: false,
-                            execCommand: 'ansible-playbook /opt/playbooks/download-deploy.yaml -i /opt/playbooks/hosts',
-                            execTimeout: 120000
+                                cleanRemote:false,
+                                execCommand: 'ansible-playbook /opt/playbooks/download-deploy.yaml.yaml -i /opt/playbooks/hosts',
+                                execTimeout: 120000
                         )
-                    ],
-                    usePromotionTimestamp: false,
+                    ], 
+                    usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
                     verbose: false)
                     ])
-               }
-
+            
             }
-        }}
+        }
+    }
+}
