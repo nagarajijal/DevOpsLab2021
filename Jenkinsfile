@@ -64,11 +64,45 @@ pipeline{
 
             }
         
+    // Stage 5: Deploying the build artifact to Ansible
+stage('Deploy to Ansible'){
+  steps{
+    echo "Deploying....."
+    sshPublisher(publishers:
+    [sshPublisherDesc(
+       configName: 'Ansible_Controller',
+       transfers: [
+         sshTransfer(
+           cleanRemote: false,
+           execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy_docker.yaml -i /opt/playbooks/hosts
+           exectimeout: 120000
+         )
+       ]'
+       usePromotionTimestamp: false,
+       useWorkspaceInPromotion: false,
+       verbose: false)
+    ])
+  }
+}
 
-        // Stage5 : Publish the source code to Sonarqube
+        // Stage5 : Deploying
         stage ('Deploy'){
             steps {
                 echo ' Deploying......'
+                sshPublisher(publishers: 
+                [sshPublisherDesc(
+                    configName: 'Ansible-controller', 
+                    transfers: [
+                        sshTransfer(
+                            cleanRemote: false,
+                            execCommand: 'ansible-playbook /opt/playbook/download-deploy.yaml -i /opt/playbook/hosts'
+                            execTimeout: 120000
+                    )
+                    ],
+                    usePromotionTimestamp: false,
+                    useWorkspaceInPromotion: false, 
+                    verbose: false)
+                ])
                }
 
             }
