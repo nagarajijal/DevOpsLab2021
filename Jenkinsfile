@@ -23,10 +23,12 @@ pipeline{
         }
 
         // Stage2 : Testing
-        stage ('Test'){
+        stage ('Sonarqube analysis'){
             steps {
-                echo ' testing......'
-
+                echo 'Source code pusblished for static code analysys......'
+                withSonarQubeEnv('sonarqube'){
+                    sh 'mvn sonar:sonar'
+                } 
             }
         }
 
