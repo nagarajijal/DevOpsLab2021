@@ -4,3 +4,5 @@ For build use : mvn clean package
 
 Test
 
+nexus pulic ip
+no previuos docker containers
