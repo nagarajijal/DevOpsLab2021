@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Syniverse's DevOps Lab.</title>
+    <title>Nagaraj's DevOps Lab.</title>
 
 
     <!-- Custom styles for this template -->
@@ -32,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Syniverse's DevOps AWS Lab</a>
+            <a class="navbar-brand" href="#">Nagaraj's DevOps AWS Lab</a>
         </div>
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form">
@@ -52,7 +52,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Hello</h1>
-        <p>This is Syniverses DevOps AWS Lab</p>
+        <p>This is Nagarajs DevOps AWS Lab</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Success!! more &raquo;</a></p>
     </div>
@@ -68,7 +68,7 @@
         </div>
         <div class="col-md-4">
             <h2>Nexus</h2>
-            <p>I have used Nexus3 as my maven repository maSyniverseer. Jenkins will publish the artifacts to Nexus after succesful build </p>
+            <p>I have used Nexus3 as my maven repository maNagarajer. Jenkins will publish the artifacts to Nexus after succesful build </p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -91,7 +91,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Syniverse's devops lab 2020-2021</p>
+        <p>&copy; Nagaraj's devops lab 2020-2021</p>
     </footer>
 </div> <!-- /container -->
 
