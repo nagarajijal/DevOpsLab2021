@@ -41,8 +41,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello ...</h1>
-        <p>This is Nagaraj's DevOps AWS Lab</p>
+        <h1>Hello ...Welcome to Nagaraj's DevOps Demo lab on AWS...</h1>
+        <p></p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Success!! more &raquo;</a></p>
     </div>
