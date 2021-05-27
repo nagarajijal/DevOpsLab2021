@@ -42,7 +42,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Hello, Welcome to DevOps Lab...!!!</h1>
-        <p></p>
+        <p>Have a Good Day !!!</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Success!! more &raquo;</a></p>
     </div>
